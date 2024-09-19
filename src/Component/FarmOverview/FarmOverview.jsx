@@ -3,7 +3,7 @@ import PieChart from '../Charts/PieChart';
 import GaugeChart from '../Charts/GaugeChart ';
 import Weather from '../Charts/Weather';
 import './FarmOverview.css'
-import ChartList from '../chartList';
+import ChartList from '../ChartList';
 function FarmOverview() {
     const lineChartData = [
         { name: "Page A", value: 1000 },
