@@ -1,7 +1,7 @@
 
 // eslint-disable-next-line react/prop-types
 const GaugeChart = ({ value, maxValue, title, unit, color }) => {
-    const size = 200;
+    const size = 150;
     const strokeWidth = 8;
     const radius = (size - strokeWidth) / 2;
     const circumference = radius * Math.PI; // Half circumference for a semicircle
@@ -46,7 +46,7 @@ const GaugeChart = ({ value, maxValue, title, unit, color }) => {
                     top: '90%',
                     left: '50%',
                     transform: 'translateX(-50%)',
-                    fontSize: '14px',
+                    fontSize: '12px',
                     color: '#fff',
                     textAlign: 'center',
 

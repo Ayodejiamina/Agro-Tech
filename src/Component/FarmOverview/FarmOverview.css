@@ -16,7 +16,7 @@
 }
 .sensor {
   background-color: #ffffff09;
-  height: 400px;
+  height: 500px;
 }
 .sensor div img {
   height: 50px;
@@ -27,7 +27,7 @@
 }
 .sensor3 {
   background-color: #ffffff09;
-  height: 400px;
+  height: 500px;
 }
 
 .sensor3 img {
@@ -36,7 +36,8 @@
 }
 .sprinkler {
   background-color: #ffffff09;
-  height: 190px;
+  height: fit-content;
+  padding: 30px 0px;
 }
 .sprinkler .progressBar {
   height: 9px;
@@ -50,10 +51,14 @@
   background-color: blue;
   border-radius: 10px;
 }
+.bar {
+  margin-left: 30px;
+}
 
 .energy {
   background-color: #ffffff09;
-  height: 150px;
+  height: fit-content;
+  padding: 20px 0px;
   margin-top: 30px;
 }
 .smart1 {
@@ -66,4 +71,7 @@
 .smart2 img {
   width: 100%;
   height: 250px;
+}
+.title {
+  font-size: 12px;
 }

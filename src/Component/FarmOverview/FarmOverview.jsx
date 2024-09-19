@@ -3,6 +3,7 @@ import PieChart from '../Charts/PieChart';
 import GaugeChart from '../Charts/GaugeChart ';
 import Weather from '../Charts/Weather';
 import './FarmOverview.css'
+import ChartList from '../chartList';
 function FarmOverview() {
     const lineChartData = [
         { name: "Page A", value: 1000 },
@@ -49,62 +50,23 @@ function FarmOverview() {
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><path fill="currentColor" d="m7 10l5 5l5-5z" /></svg>
                         </div>
                     </div>
-                    <div className='grid grid-cols-4 gap-7'>
-                        <div className='col-span-1 eachColumn rounded-md flex items-center'>
-                            <div className='text-white px-2'>
-                                <p className='text-1xl'>Total Water Consumption</p>
-                                <div className='mt-3'>
-                                    <h2 className='text-4xl'>400.5l</h2>
-                                    <small>at 10.15 AM</small>
-                                </div>
-                            </div>
-                            <div style={{ width: "120px", height: "100px" }}>
-                                <SimpleLineChart data={lineChartData3} />
-                            </div>
-                        </div>
-                        <div className='col-span-1  eachColumn rounded-md flex items-center'>
-                            <div className='text-white px-2'>
-                                <p className='text-1xl'>Current Water Requirement</p>
-                                <div className='mt-3'>
-                                    <h2 className='text-4xl text-orange-500'>200 l/m2</h2>
-                                    <small>at 10.15 AM</small>
-                                </div>
-                            </div>
-                            <div style={{ width: "120px", height: "100px" }}>
-                                <SimpleLineChart data={lineChartData2} />
-                            </div>
-                        </div>
-                        <div className='col-span-1  eachColumn rounded-md flex items-center'>
-                            <div className='text-white px-2'>
-                                <p className='text-1xl'>Total Rainfall</p>
-                                <div className='mt-3'>
-                                    <h2 className='text-4xl text-orange-500'>1.2<small>m</small></h2>
-                                    <small>at 11:15 AM</small>
-                                </div>
-                            </div>
-                            <div style={{ width: "120px", height: "100px" }}>
-                                <SimpleLineChart data={lineChartData} />
-                            </div>
-                        </div>
-                        <div className='col-span-1  eachColumn rounded-md flex  items-center'>
-                            <div className='text-white px-2'>
-                                <p className='text-1xl'>Tank Level</p>
-                                <div className='mt-3'>
-                                    <h2 className='text-4xl text-green-500'>35%</h2>
+                    <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7'>
 
-                                </div>
-                            </div>
-                            <div className='ml-14'>
-                                <PieChart />
-                            </div>
-                        </div>
+                        <ChartList title="Total Water Consumption" rate="400.5l" time="10:15am" chart={<SimpleLineChart data={lineChartData} />} color="white" />
+
+                        <ChartList title="Current Water Requirement" rate="200 l/m2" time="10:15am" chart={<SimpleLineChart data={lineChartData2} />} color="#f97316" />
+
+                        <ChartList title="Total Rainfall" rate="1.2m" time="11:15am" chart={<SimpleLineChart data={lineChartData3} />} color="#f97316" />
+
+                        <ChartList title="Tank Level" rate="35%" chart={<PieChart />} color=" #22c55e" />
+
                     </div>
                 </section>
                 <section className='my-5'>
-                    <div className='grid grid-cols-4 gap-7'>
+                    <div className='grid lg:grid-cols-4 md:grid-cols-2 grid-cols-2   gap-7'>
                         <div className='col-span-2 sensor rounded-md px-5'>
                             <h3 className='text-white my-4 text-1xl'>Sensors Overview</h3>
-                            <div className='grid grid-cols-3 gap-7'>
+                            <div className='grid lg:grid-cols-3 md:grid-cols-3 grid-cols-2 gap-7'>
                                 <div className='col-span-1'>
                                     <GaugeChart value={78} maxValue={100} title="Temperature" unit="°C" color="#4CAF50" />
                                 </div>
@@ -126,12 +88,12 @@ function FarmOverview() {
                                 </div>
                             </div>
                         </div>
-                        <div className='col-span-1 sensor  rounded-md px-5 text-white'>
+                        <div className='col-span-2 md:col-span-1 sensor  rounded-md px-5 text-white'>
                             <h3 className='text-white my-4 text-1xl'>Weather Forecast</h3>
                             <Weather />
 
                         </div>
-                        <div className='col-span-1'>
+                        <div className='col-span-2 md:col-span-1'>
 
                             <div className='sprinkler rounded-md text-white px-5'>
                                 <h2>Sprinklers Overview</h2>
@@ -147,8 +109,8 @@ function FarmOverview() {
                                 </div>
                                 <div className='mt-7'>
                                     <div className='flex justify-between'>
-                                        <h3>irrigating Currently</h3>
-                                        <h2 className='text-3xl text-green-500'>45%</h2>
+                                        <h3 >irrigating Currently</h3>
+                                        <h2 className='lg:text-3xl md:text-2xl text-green-500'>45%</h2>
                                     </div>
 
                                     <div className='progressBar'>
@@ -158,9 +120,9 @@ function FarmOverview() {
                             </div>
                             <div className='energy rounded-md flex items-center'>
                                 <div className='text-white px-2'>
-                                    <p className='text-1xl'>Total Energy Consumption</p>
+                                    <p className='lg:text-1xl'>Total Energy Consumption</p>
                                     <div className='mt-3'>
-                                        <h2 className='text-4xl text-orange-500'>10 KWH</h2>
+                                        <h2 className='lg:text-4xl md:text-2xl text-2xl text-orange-500'>10 KWH</h2>
                                         <small>at 20:25 AM</small>
                                     </div>
                                 </div>
@@ -172,8 +134,8 @@ function FarmOverview() {
                     </div>
                 </section>
                 <section className='my-5'>
-                    <div className='grid grid-cols-2 gap-7'>
-                        <div className='col-span-1 rounded-md smart1 flex items-center justify-center'>
+                    <div className='grid col-span-1 md:grid-cols-2 gap-7'>
+                        <div className='col-span-2 md:col-span-1 rounded-md smart1 flex items-center justify-center'>
                             <div>
                                 <h1 className='text-white text-6xl'>AGRO <span className='text-green-500'> TECH</span></h1>
                                 <h6 className='text-center text-white text-2xl mt-3'>Smart <span className='text-green-500'>Irrigation</span> System</h6>
@@ -181,7 +143,7 @@ function FarmOverview() {
                             </div>
                         </div>
 
-                        <div className='col-span-1 rounded-md smart2'>
+                        <div className='col-span-2 md:col-span-1 rounded-md smart2'>
                             <img src="https://cdn.pixabay.com/photo/2016/07/27/08/14/water-1544808_640.jpg" alt="" className='rounded-md' />
                         </div>
                     </div>
